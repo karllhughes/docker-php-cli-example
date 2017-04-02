@@ -1,0 +1,6 @@
+- type: serial
+  steps:
+  - service: composer
+    command: install
+  - service: app
+    command: bash ./codeship-run.sh

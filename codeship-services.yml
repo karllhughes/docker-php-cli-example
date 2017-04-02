@@ -1,0 +1,23 @@
+version: "2.0"
+services:
+
+  # PHP Application
+  app:
+    build: .
+    links:
+      - database
+    encrypted_env_file: .env.encrypted
+    command: cron -f
+
+  # Database
+  database:
+    image: mariadb
+    encrypted_env_file: .env.encrypted
+    ports:
+      - "33060:3306"
+
+  # Composer
+  composer:
+    image: composer/composer
+    volumes:
+      - ./:/app

@@ -1,0 +1,23 @@
+version: "2.0"
+services:
+
+  # PHP Application
+  app:
+    build: .
+    links:
+      - database
+    env_file: .env
+    command: cron -f
+    # Keep code up to date for local development
+    # volumes:
+    #  - ./:/app
+
+  # Database
+  database:
+    image: mariadb
+    env_file: .env
+    ports:
+      - "33060:3306"
+    # Mount the data as volume for persistence
+    volumes:
+      - ./.data:/var/lib/mysql
