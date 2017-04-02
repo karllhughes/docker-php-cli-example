@@ -1,5 +1,7 @@
 # Sample Command Line PHP/Docker Application
 
+[ ![Codeship Status for karllhughes/docker-php-cli-example](https://app.codeship.com/projects/58f60bb0-f9ef-0134-bf7b-0e0845e8df31/status?branch=master)](https://app.codeship.com/projects/211142)
+
 This is a simple Laravel command line application demonstrating using Docker and Docker Compose for PHP application development, continuous integration, and deployment through the [Codeship Pro platform](https://codeship.com/features/pro).
 
 ## Commands
@@ -96,15 +98,15 @@ Build and run the tests:
 $ jet steps
 ```
  
-## Continuous integration
+## Continuous integration with Codeship
 
 This project was built to use Codeship's Docker continuous integration platform.
 
-First, copy your Codeship AES key into `codeship.aes` file at the root of this project.
+1. Copy your Codeship AES key into a file called `codeship.aes` at the root of this project.
 
-Next, encrypt your .env file: `$ jet encrypt .env .env.encrypted`
+2. Encrypt your .env file: `$ jet encrypt .env .env.encrypted`
 
-Push your code to a repository that is attached to a Codeship Pro CI instance.
+3. Push your code to a repository that is attached to a Codeship Pro CI instance.
 
 ## License
 
