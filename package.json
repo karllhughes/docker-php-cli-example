@@ -4,7 +4,7 @@
     "app:up": "docker-compose up -d",
     "app:restart": "docker-compose up -d --build && docker-compose restart",
     "app:down": "docker-compose down",
-    "app:test": "docker exec dockerphpexample_database_1 vendor/bin/phpunit",
+    "app:test": "docker exec dockerphpcliexample_app_1 vendor/bin/phpunit",
 
     "artisan": "docker exec dockerphpexample_app_1 php artisan ",
 
@@ -12,7 +12,7 @@
     "composer:install": "docker run --rm -v $(pwd):/app composer/composer install",
     "composer:update": "docker run --rm -v $(pwd):/app composer/composer update",
 
-    "db:create": "docker exec dockerphpexample_app_1 bash db-create.sh",
+    "db:create": "docker exec dockerphpcliexample_app_1 bash db-create.sh",
     "db:migrate": "npm run -s artisan -- migrate",
     "db:seed": "npm run -s artisan -- db:seed"
   }

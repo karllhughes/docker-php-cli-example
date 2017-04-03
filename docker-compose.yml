@@ -17,7 +17,7 @@ services:
     image: mariadb
     env_file: .env
     ports:
-      - "33060:3306"
+      - 3306
     # Mount the data as volume for persistence
     volumes:
       - ./.data:/var/lib/mysql
