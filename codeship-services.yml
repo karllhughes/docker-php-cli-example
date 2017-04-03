@@ -13,8 +13,6 @@ services:
   database:
     image: mariadb
     encrypted_env_file: .env.encrypted
-    ports:
-      - 3306
 
   # Composer
   composer:
