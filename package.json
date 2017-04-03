@@ -6,7 +6,7 @@
     "app:down": "docker-compose down",
     "app:test": "docker exec dockerphpcliexample_app_1 vendor/bin/phpunit",
 
-    "artisan": "docker exec dockerphpexample_app_1 php artisan ",
+    "artisan": "docker exec dockerphpcliexample_app_1 php artisan ",
 
     "composer:dump": "docker run --rm -v $(pwd):/app composer/composer dump",
     "composer:install": "docker run --rm -v $(pwd):/app composer/composer install",

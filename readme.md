@@ -37,6 +37,12 @@ In order to run this project locally for development, uncomment these lines in t
 
 This will ensure that any updates you make take effect immediately in the application container.
 
+Run the composer install command:
+
+```bash
+$ npm run -s composer:install
+```
+
 Now, copy `.env.example` to `.env` and customize with your own variables and keys.
 
 Next, run the npm command to bring up the docker containers:
