@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Add crontab file in the cron directory
-ADD crontab /etc/cron.d/cron
+ADD docker/crontab /etc/cron.d/cron
 
 # Give execution rights on the cron job
 RUN chmod 0644 /etc/cron.d/cron

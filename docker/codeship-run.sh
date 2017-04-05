@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Create the database
-bash db-create.sh
+bash docker/db-create.sh
 
 ## Run migrations
 php artisan migrate

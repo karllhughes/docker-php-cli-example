@@ -3,6 +3,6 @@
   - service: composer
     command: install
   - service: app
-    command: bash ./codeship-run.sh
+    command: sh docker/codeship-run.sh
   - service: deployer
     command: sh execute.sh
