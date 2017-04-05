@@ -73,17 +73,22 @@ $ npm run -s app:down
 
 ## Testing Locally
 
+### Testing within containers
+
 Once the app is set up and running, you can run the acceptance test:
 
 ```bash
 $ npm run -s app:test
 ```
 
-## Testing with Jet
+This runs phpunit from within the running application container.
 
-If you have Codeship's Jet installed, you can run tests from Jet as well.
+### Testing and deploying with Jet
 
-First, bring down the application (if it's running):
+If you have [Codeship's Jet installed](https://documentation.codeship.com/pro/getting-started/installation/), you can run tests from Jet as well.
+
+First, bring the application down (if it's running):
+
 ```bash
 $ npm run -s app:down
 ```
@@ -100,7 +105,7 @@ Encrypt your .env files:
 $ jet encrypt .env .env.encrypted && jet encrypt deployer/.env deployer/.env.encrypted
 ```
 
-Build and run the tests:
+Build the containers, run the tests, and deploy the latest on the master branch:
 
 ```bash
 $ jet steps
@@ -108,11 +113,13 @@ $ jet steps
  
 ## Continuous integration with Codeship
 
-This project was built to use Codeship's Docker continuous integration platform.
+This project was built to use [Codeship's Docker continuous integration platform](https://codeship.com/features/pro).
 
-1. Copy your Codeship AES key into a file called `codeship.aes` at the root of this project.
+1. Copy your [Codeship AES key](https://documentation.codeship.com/pro/getting-started/encryption/#getting-the-key) into a file called `codeship.aes` at the root of this project.
 
-2. Encrypt your .env file: `$ jet encrypt .env .env.encrypted && jet encrypt deployer/.env deployer/.env.encrypted`
+2. Make sure your `deployer/.env` file is filled out with your server information and private rsa key (with no line breaks).
+
+2. Encrypt your .env files: `$ jet encrypt .env .env.encrypted && jet encrypt deployer/.env deployer/.env.encrypted`
 
 3. Push your code to a repository that is attached to a Codeship Pro CI instance.
 
