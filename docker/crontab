@@ -1,2 +1,2 @@
-# Cron will run this artisan command every hour
-1 * * * * root /usr/local/bin/php /app/artisan triggers:check > /proc/$(cat /var/run/crond.pid)/fd/1 2>&1
+# Cron will run the artisan command every hour
+0 * * * * root /usr/local/bin/php /app/artisan item:update
