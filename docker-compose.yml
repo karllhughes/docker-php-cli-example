@@ -8,7 +8,7 @@ services:
       - database
     env_file: .env
     command: cron -f
-    # Keep code up to date for local development
+    # OPTIONAL: Keeps code up to date for local development
     # volumes:
     #  - ./:/app
 
@@ -18,6 +18,6 @@ services:
     env_file: .env
     ports:
       - 3306
-    # Mount the data as volume for persistence
+    # OPTIONAL: Mount the data as volume for persistence
     volumes:
       - ./.data:/var/lib/mysql

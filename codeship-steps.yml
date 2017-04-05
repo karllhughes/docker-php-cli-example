@@ -4,3 +4,5 @@
     command: install
   - service: app
     command: bash ./codeship-run.sh
+  - service: deployer
+    command: sh execute.sh

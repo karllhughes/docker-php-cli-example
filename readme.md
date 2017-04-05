@@ -71,7 +71,7 @@ To bring the containers down when you're finished:
 $ npm run -s app:down
 ```
 
-## Testing
+## Testing Locally
 
 Once the app is set up and running, you can run the acceptance test:
 
@@ -79,9 +79,11 @@ Once the app is set up and running, you can run the acceptance test:
 $ npm run -s app:test
 ```
 
+## Testing with Jet
+
 If you have Codeship's Jet installed, you can run tests from Jet as well.
 
-First, bring down the application:
+First, bring down the application (if it's running):
 ```bash
 $ npm run -s app:down
 ```
@@ -92,10 +94,10 @@ Generate an AES encryption key:
 $ jet generate
 ```
 
-Encrypt your .env file:
+Encrypt your .env files:
 
 ```bash
-$ jet encrypt .env .env.encrypted
+$ jet encrypt .env .env.encrypted && jet encrypt deployer/.env deployer/.env.encrypted
 ```
 
 Build and run the tests:
@@ -110,9 +112,11 @@ This project was built to use Codeship's Docker continuous integration platform.
 
 1. Copy your Codeship AES key into a file called `codeship.aes` at the root of this project.
 
-2. Encrypt your .env file: `$ jet encrypt .env .env.encrypted`
+2. Encrypt your .env file: `$ jet encrypt .env .env.encrypted && jet encrypt deployer/.env deployer/.env.encrypted`
 
 3. Push your code to a repository that is attached to a Codeship Pro CI instance.
+
+This should run your tests and deploy your code to the server specified in `deployer/.env`
 
 ## License
 

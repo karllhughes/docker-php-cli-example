@@ -19,3 +19,8 @@ services:
     image: composer/composer
     volumes:
       - ./:/app
+
+  # Deployer
+  deployer:
+    build: ./deployer
+    encrypted_env_file: deployer/.env.encrypted
