@@ -4,5 +4,5 @@
     command: install
   - service: app
     command: sh docker/codeship-run.sh
-  #- service: deployer
-  #  command: sh execute.sh
+  - service: deployer
+    command: sh execute.sh
