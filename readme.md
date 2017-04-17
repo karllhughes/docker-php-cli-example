@@ -1,6 +1,6 @@
 # Sample Command Line PHP/Docker Application
 
-[ ![Codeship Status for karllhughes/docker-php-cli-example](https://app.codeship.com/projects/58f60bb0-f9ef-0134-bf7b-0e0845e8df31/status?branch=master)](https://app.codeship.com/projects/211142)
+[ ![Codeship Status for karllhughes/docker-php-cli-example](https://app.codeship.com/projects/95ab9250-05a3-0135-8091-7a325a44f9f4/status?branch=master)](https://app.codeship.com/projects/213574)
 
 This is a simple Laravel command line application demonstrating using Docker and Docker Compose for PHP application development, continuous integration, and deployment through the [Codeship Pro platform](https://codeship.com/features/pro).
 
